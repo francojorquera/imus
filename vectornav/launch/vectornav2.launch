@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="frame_id" default="vectornav2"/>
+	<arg name="serial_port" default="/dev/IMU_vectornav2"/>
+	<node pkg="vectornav" type="vnpub" name="vectornav2" output="screen" >
+	  <param name="frame_id" value="$(arg frame_id)"/>
+      <rosparam command="load" file="$(find vectornav)/params/vn200_2.yaml" />
+	</node>	
+	
+</launch>
+
+
